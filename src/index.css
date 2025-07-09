@@ -1,0 +1,39 @@
+.InfoBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Card_Container .MuiCard-root {
+  background: linear-gradient(to bottom right, #e0f7fa, #ffffff);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  color: #333;
+}
+
+.InfoBox p {
+  font-size: 16px;
+  margin: 6px 0;
+  line-height: 1.4;
+}
+
+.MuiCardContent-root {
+  padding: 1.5rem;
+}
+
+/* Weather-based Themes (Optional) */
+.rain-theme {
+  background: linear-gradient(to bottom, #4e54c8, #8f94fb);
+  color: #fff;
+}
+
+.clear-theme {
+  background: linear-gradient(to bottom, #56ccf2, #2f80ed);
+  color: #fff;
+}
+
+.cloud-theme {
+  background: linear-gradient(to bottom, #d7d2cc, #304352);
+  color: #fff;
+}

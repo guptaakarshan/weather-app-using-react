@@ -16,18 +16,29 @@ export default function InfoBox({ info }) {
   let RAIN_URL =
     "https://images.unsplash.com/photo-1438449805896-28a666819a20?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFpbiUyMHdlYXRoZXJ8ZW58MHx8MHx8fDA%3D";
 
+  // Theme class logic should be outside of JSX
+  let themeClass = "";
+
+  if (info.weather.toLowerCase().includes("cloud")) {
+    themeClass = "cloud-theme";
+  } else if (info.weather.toLowerCase().includes("clear")) {
+    themeClass = "clear-theme";
+  } else if (info.weather.toLowerCase().includes("rain")) {
+    themeClass = "rain-theme";
+  }
+
   return (
-    <div className="InfoBox">
+    <div className={`InfoBox ${themeClass}`}>
       <div className="Card_Container">
-        <Card sx={{ maxWidth: 345 }}>
+        <Card className={themeClass}sx={{ maxWidth: 345 }}>
           <CardMedia 
-          sx={{ height: 140 }} 
-          image={info.humidity>80 
-            ? RAIN_URL 
-            : info.temp>15
-            ?HOT_URL
-            :COLD_URL} 
-          title="weather" />
+            sx={{ height: 140 }} 
+            image={info.humidity > 80 
+              ? RAIN_URL 
+              : info.temp > 15
+              ? HOT_URL
+              : COLD_URL} 
+            title="weather" />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               {info.city}

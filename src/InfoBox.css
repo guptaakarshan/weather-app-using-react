@@ -1,8 +1,14 @@
-.InfoBox{
-  text-align: center;
-
-}
-.Card_Container{
+.InfoBox {
+  width: 100%;
   display: flex;
   justify-content: center;
+}
+
+.Card_Container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.MuiCard-root {
+  width: 100%;
 }
